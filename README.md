@@ -179,5 +179,6 @@
         flag = True
     ```
 
-This chapter focuses on how to use decision structures (`if`, `else`, `elif`), relational operators, and logical operators to control the flow of a program based on conditions. It's important to understand how these concepts work to create efficient, logical programs. Let me know if you need any further explanations! 😊
+--- 
+
 
