@@ -181,4 +181,247 @@
 
 --- 
 
+### **Chapter 4: Repetition Structures**
 
+### 1. **Introduction to Loops**:
+- Loops allow repeated execution of code without duplicating it.
+- **Two main types**:
+  - **Condition-controlled** (e.g., `while` loops): Runs until a condition is no longer true.
+  - **Counter-controlled** (e.g., `for` loops): Runs a specific number of times.
+
+### 2. **The `while` Loop**:
+- A **pretest loop**: Checks the condition before each iteration.
+- **Example**: Counting down from 5 to 0. The loop stops when the condition is no longer met.
+- Infinite loops occur if there's no code to make the condition false.
+
+### 3. **Counters**:
+- A **counter** is a variable that changes (increments or decrements) during loop execution. It controls the loop.
+
+### 4. **Augmented Assignment Operators**:
+- Shorthand for incrementing, decrementing, or modifying variables (e.g., `+=`, `-=`, etc.).
+
+### 5. **Input Validation with Loops**:
+- Loops can validate user input by repeatedly asking for correct values until valid input is provided.
+
+### 6. **Common Loop Errors**:
+- Forgetting to update the loop control variable or incorrect indentation can cause infinite loops or incorrect execution.
+
+### 7. **Running Totals and Averages**:
+- Loops can be used to **accumulate totals** or calculate averages by iterating over a set of numbers.
+
+### 8. **Sentinels**:
+- A **sentinel value** marks the end of user input (e.g., `-1` could stop data entry).
+
+### 9. **The `for` Loop**:
+- A **count-controlled loop** that iterates over a sequence (e.g., a list or range).
+- Useful for precise repetitions and when the number of iterations is known in advance.
+
+### 10. **Nested Loops**:
+- Loops within loops are useful for tasks like processing multi-dimensional data (e.g., calculating student test averages).
+
+### 11. **Breaking and Continuing Loops**:
+- The `break` statement exits a loop early, while `continue` skips to the next iteration without finishing the current one.
+
+### 12. **Turtle Graphics and Loops**:
+- Loops can be used to draw shapes and patterns using turtle graphics (a method of creating visuals with code).
+
+Here are some code examples based on the topics covered in Chapter 4 of GENG 106:
+
+### Examples
+
+### 1. **Basic `while` Loop Example**
+This loop counts down from 5 to 0:
+
+```python
+n = 5
+while n > 0:
+    print(n)
+    n -= 1  # Decrease n by 1 each iteration
+print('Blastoff!')
+```
+
+**Output:**
+```
+5
+4
+3
+2
+1
+Blastoff!
+```
+
+### 2. **Counter-Controlled `while` Loop**
+This loop counts the sum of numbers from 1 to 10:
+
+```python
+sum = 0
+number = 1
+while number <= 10:
+    sum += number  # Add the current number to sum
+    number += 1    # Increment the counter
+print(f'Sum of numbers 1 to 10 is {sum}')
+```
+
+**Output:**
+```
+Sum of numbers 1 to 10 is 55
+```
+
+### 3. **`for` Loop Example**
+This loop prints a list of friends:
+
+```python
+friends = ['Joseph', 'Glenn', 'Sally']
+for friend in friends:
+    print(f'Happy New Year, {friend}!')
+```
+
+**Output:**
+```
+Happy New Year, Joseph!
+Happy New Year, Glenn!
+Happy New Year, Sally!
+```
+
+### 4. **Input Validation with `while` Loop**
+This example asks for a number between 1 and 100 and keeps asking until valid input is provided:
+
+```python
+number = int(input("Enter a number between 1 and 100: "))
+while number < 1 or number > 100:
+    number = int(input("Invalid input. Enter a number between 1 and 100: "))
+print(f'You entered {number}')
+```
+
+**Sample Run:**
+```
+Enter a number between 1 and 100: 150
+Invalid input. Enter a number between 1 and 100: -5
+Invalid input. Enter a number between 1 and 100: 50
+You entered 50
+```
+
+### 5. **Running Total and Average**
+This example calculates the average of 5 input numbers:
+
+```python
+count = 0
+total = 0
+while count < 5:
+    number = int(input('Enter a number: '))
+    total += number
+    count += 1
+print(f'The average is {total / 5}')
+```
+
+**Sample Run:**
+```
+Enter a number: 10
+Enter a number: 20
+Enter a number: 30
+Enter a number: 40
+Enter a number: 50
+The average is 30.0
+```
+
+### 6. **Sentinel Loop**
+This example uses a sentinel value of `-1` to end a sequence of points scored in a game:
+
+```python
+total = 0
+points = int(input("Enter points earned (or -1 to quit): "))
+while points != -1:
+    total += points
+    points = int(input("Enter points earned (or -1 to quit): "))
+print(f'The total points are {total}')
+```
+
+**Sample Run:**
+```
+Enter points earned (or -1 to quit): 12
+Enter points earned (or -1 to quit): 22
+Enter points earned (or -1 to quit): -1
+The total points are 34
+```
+
+### 7. **`for` Loop with `range()`**
+This example prints numbers from 1 to 5 using a `for` loop and the `range()` function:
+
+```python
+for num in range(1, 6):
+    print(num)
+```
+
+**Output:**
+```
+1
+2
+3
+4
+5
+```
+
+### 8. **Nested Loops Example**
+This example prints a pattern of stars using nested loops:
+
+```python
+for row in range(6):  # Outer loop
+    for col in range(8):  # Inner loop
+        print('*', end='')  # Print stars in the same line
+    print()  # Move to the next line after each row
+```
+
+**Output:**
+```
+********
+********
+********
+********
+********
+********
+```
+
+### 9. **Breaking Out of a Loop**
+This example shows how to use the `break` statement to exit a loop early:
+
+```python
+while True:
+    line = input('> ')
+    if line == 'done':
+        break
+    print(line)
+print('Done!')
+```
+
+**Sample Run:**
+```
+> hello
+hello
+> done
+Done!
+```
+
+### 10. **Continue Statement Example**
+This example uses the `continue` statement to skip lines starting with `#`:
+
+```python
+while True:
+    line = input('> ')
+    if line.startswith('#'):
+        continue  # Skip the rest of the loop if line starts with #
+    if line == 'done':
+        break
+    print(line)
+print('Done!')
+```
+
+**Sample Run:**
+```
+> hello
+hello
+> # This is a comment
+> done
+Done!
+```
+
+These examples cover a variety of loop types, input validation, counters, and control structures that are critical to programming.
